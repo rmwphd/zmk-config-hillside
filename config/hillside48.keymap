@@ -44,7 +44,7 @@
 #define SEL_END     RS(LG(RIGHT))
 
 &sk {
-    release-after-ms = <800>;
+    release-after-ms = <900>;
 };
 
 / {
@@ -57,7 +57,7 @@
 &kp  GRAVE    &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE   &kp  LALT  &kp  RGUI  &none   
+                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -65,10 +65,10 @@
 		// MINIMAK
                 minimak4_layer {
                         bindings = <
-&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
-&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
+&kp  GRAVE    &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
+&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
                         >;
                         
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -83,10 +83,10 @@
  * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
  */
                         bindings = <
-&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
-&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
+&kp  GRAVE    &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
+&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
                         >;
                         
                         sensor-bindings = <
@@ -96,10 +96,10 @@
 		
                 num_layer {
                         bindings = <
-&mo ADJUST_L &trans &trans &kp UP   &trans &trans                                                               &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
-&trans &trans &kp LEFT  &kp DOWN &kp RIGHT  &trans                                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS     &trans
-&trans &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO  &to QWERTY_L                      &trans   &trans   &kp  N1   &kp  N2   &kp  N3     &kp  SLASH    &trans
-                                         &trans &trans &trans  &trans   &trans           &trans  &trans   &kp N0    &kp DOT     &trans   
+&mo ADJUST_L &trans     &trans    &kp UP     &trans      &trans                                        &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
+&trans       &trans     &kp LEFT  &kp DOWN   &kp RIGHT   &trans                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS     &trans
+&trans       &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO &to QWERTY_L              &trans   &trans   &kp  N1   &kp  N2   &kp  N3     &kp  SLASH    &trans
+                                         &trans &trans &trans &trans &trans           &trans  &trans  &kp N0  &kp DOT  &trans   
  
                         >;
                         
