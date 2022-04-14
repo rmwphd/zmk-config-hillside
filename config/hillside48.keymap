@@ -42,6 +42,9 @@
 #define TASK_MAN    LG(LA(ESCAPE))
 #define SEL_HOME    RS(LG(LEFT))
 #define SEL_END     RS(LG(RIGHT))
+#define SEL_LEFT    RS(LEFT)
+#define SEL_DOWN    RS(DOWN)
+#define SEL_RIGHT    RS(RIGHT)
 
 &sk {
     release-after-ms = <900>;
@@ -110,7 +113,7 @@
                         bindings = <
 &trans &kp TASK_MAN &trans    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
 &trans &kp SWP_WND  &kp S     &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
-&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp RS(LEFT) &kp RS(DOWN) &kp RS(RIGHT) &kp SEL_END &trans 
+&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
                                      &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
               >;
                         
