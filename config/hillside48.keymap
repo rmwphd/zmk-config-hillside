@@ -44,7 +44,8 @@
 #define SEL_END     RS(LG(RIGHT))
 #define SEL_LEFT    RS(LEFT)
 #define SEL_DOWN    RS(DOWN)
-#define SEL_RIGHT    RS(RIGHT)
+#define SEL_RIGHT   RS(RIGHT)
+#define R_SCRNSHT   RS(RG(N4))
 
 &sk {
     release-after-ms = <900>;
@@ -144,10 +145,10 @@
 
                 media_layer {
                         bindings = <
-&trans &kp TASK_MAN &trans    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
-&trans &kp SWP_WND  &kp S     &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
-&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT  &kp SEL_END &trans 
-                                     &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
+&kp F1 &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                                                 &trans &trans &trans &trans &trans &trans
+&kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                                                &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans  &trans  &trans  &trans                            &to QWERTY_L &kp R_SCRNSHT &kp K_VOL_DN &kp K_MUTE &kp K_VOL_UP  &trans &trans 
+                     &trans  &trans  &trans  &trans  &trans            &trans  &kp K_PP  &kp C_FF  &kp C_RW  &trans
               >;
                         
                         sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
