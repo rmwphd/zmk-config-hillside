@@ -11,58 +11,70 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY_L 0
-#define DVORAK_L 1
-#define COLEMK_L 2
-#define SYM_L    3
-#define NUM_L    4
-#define ADJ_L    5
+#define MINIMAK4_L 1
+#define ISRT_L 2
+#define NUMPAD_L 3
+#define EDIT_L 4
+#define FSYM_L 5
+#define JSYM_L 6
+#define MEDIA_L 7
+#define ADJUST_L 8
 
-#define Undo   LC(Z)
-#define Cut    LC(X)
-#define Copy   LC(C)
-#define Paste  LC(V)
+#define R_UNDO      LG(Z)
+#define R_REDO      LG(Y)
+#define R_CUT       LG(X)
+#define R_COPY      LG(C)
+#define R_PASTE     LG(V)
+#define SAVE        LG(S)
+#define NEW_TAB     LG(T)
+#define SWP_WND     LG(GRV)
+#define R_HOME      LG(LEFT)
+#define R_END       LG(RIGHT)
+#define ZOOM_IN     LG(EQUAL)
+#define ZOOM_OUT     LG(MINUS)
+#define L_DSK       LC(LEFT)
+#define R_DSK       LC(RIGHT)
+#define DEL_WRD     LA(BSPC)
+#define MVW_LEFT    LA(LEFT) 
+#define MVW_RIGHT   LA(RIGHT)
+#define SELW_LEFT   LA(RS(LEFT))
+#define SELW_RIGHT  LA(RS(RIGHT))
+#define TASK_MAN    LG(LA(ESCAPE))
+#define SEL_HOME    RS(LG(LEFT))
+#define SEL_END     RS(LG(RIGHT))
+
+&sk {
+    release-after-ms = <800>;
+};
 
 / {
-        keymap {
+        keymap { 
                 compatible = "zmk,keymap";
 
+                // QWERTY
                 default_layer {
-/* QWERTY
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | BKSPC |
- * | TAB   |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   |   ;   | ENTER |
- * | SHIFT |   Z   |   X   |   C   |   V   |   B   | CAPS  |-------------------|  ESC  |   N   |   M   |   ,   |   .   |   /   | SHIFT |
- * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
- */
                         bindings = <
 &kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  SEMI     &kp  ENTER  
-&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &kp  SPACE    &mo  SYM_L             &mo  NUM_L    &kp  SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
+&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
+&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
+                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
-		
-                dvorak_layer {
-/* DVORAK
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   '   |   ,   |   .   |   P   |   Y   |-----------------------------------|   F   |   G   |   C   |   R   |   L   | BKSPC |
- * | TAB   |   A   |   O   |   E   |   U   |   I   |-----------------------------------|   D   |   H   |   T   |   N   |   S   | ENTER |
- * | SHIFT |   ;   |   Q   |   J   |   K   |   X   | CAPS  |-------------------|  ESC  |   B   |   M   |   W   |   V   |   Z   | SHIFT |
- * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   /   |----------------
- */
+		// MINIMAK
+                minimak4_layer {
                         bindings = <
-&kp  GRAVE    &kp  SQT      &kp  COMMA    &kp  DOT      &kp  P        &kp  Y                                                                         &kp  F        &kp  G        &kp  C        &kp  R        &kp  L        &kp  BSPC
-&kp  TAB      &kp  A        &kp  O        &kp  E        &kp  U        &kp  I                                                                         &kp  D        &kp  H        &kp  T        &kp  N        &kp  S        &kp  ENTER
-&kp  LSHFT    &kp  SEMI     &kp  Q        &kp  J        &kp  K        &kp  X        &kp  CAPS                                          &kp   ESC     &kp  B        &kp  M        &kp  W        &kp  V        &kp  Z        &kp  RSHFT
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &kp  SPACE    &mo  SYM_L             &mo  NUM_L    &kp  SPACE    &kp  LALT     &kp  RGUI                   &kp  SLASH
+&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
+&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
+&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
+                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
                         >;
-			
+                        
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
-		
-                colemak_layer {
+		// ISRT
+                ISRT_layer {
 /* COLEMAK-DH
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | BKSPC |
@@ -71,51 +83,72 @@
  * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
  */
                         bindings = <
-&kp  GRAVE    &kp  Q        &kp  W        &kp  F        &kp  P        &kp  B                                                                         &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI     &kp  BSPC
-&kp  TAB      &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                                                                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O        &kp  ENTER
-&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  D        &kp  V        &kp  CAPS                                          &kp   ESC     &kp  K        &kp  H        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &kp  SPACE    &mo  SYM_L             &mo  NUM_L    &kp  SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
+&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
+&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
+&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
+                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
                         >;
-			
+                        
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
 		
-                sym_layer {
-/* SYM
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | HOME  |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | BSPC  |
- * | END   |  GUI  |  Alt  | Ctrl  | Shift | Pg Up |-----------------------------------|   -   |   =   |   [   |   ]   |   \   | ENTER |
- * | Shift |  UnDo |  Cut  | Copy  | Paste | Pg Dn |OsAltGr|-------------------| MENU  |   _   |   +   |   {   |   }   |   |   | SHIFT |
- * ----------------|       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  |----------------
- */
+                num_layer {
+                        bindings = <
+&mo ADJ_L &trans &trans &kp UP   &trans &trans                                                               &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
+&trans &trans &kp LEFT  &kp DOWN &kp RIGHT  &trans                                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS     &trans
+&trans &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO  &to QWERTY_L                      &trans   &trans   &kp  N1   &kp  N2   &kp  N3     &kp  SLASH    &trans
+                                         &trans &trans &trans  &trans   &trans           &trans  &trans   &kp N0    &kp DOT     &trans   
+ 
+                        >;
+                        
+                        sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+                };
+                
+                edit_layer {
+                        bindings = <
+&trans &kp TASK_MAN &trans &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PGUP &kp UP &kp PGDOWN &kp PSCREEN &kp DELETE
+&trans &kp SWP_WND &kp SAVE   &kp MVW_LEFT &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
+&trans &kp R_UNDO&kp   R_CUT  &kp R_COPY   &kp R_PASTE   &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp RS(LEFT) &kp S(DOWN) &kp S(RIGHT) &kp SEL_END &trans 
+                                     &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
+              >;
+                        
+                        sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
+                };
+                
+                fsym_layer {
                         bindings = <
 &kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
 &kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
-&trans        &kp  Undo     &kp  Cut      &kp  Copy     &kp  Paste    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
+&trans        &kp  R_UNDO     &kp  R_CUT      &kp  R_COPY     &kp  R_PASTE    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
                             &trans                      &trans        &trans        &trans        &trans                 &mo  ADJ_L    &trans        &trans        &trans                      &kp  RCTRL    
                         >;
-			
-                        sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
-                };
-		
-                num_layer {
-/* NUM   
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | F11   |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |       | BSPC  |
- * | F12   |  F1   |  F2   |  F3   |  F4   |  F5   |-----------------------------------|VOL UP | Shift | Ctrl  | Alt   | Gui   | ENTER |
- * | Shift |  F6   |  F7   |  F8   |  F9   |  F10  |  INS  |-------------------| MUTE  |VOL DN | Left  |  Up   | Down  | Right | DELETE|
- * ----------------|       |-------|       |       |       | ADJ_L |---|       |       |       |       |-------| CTRL  |----------------
- */
+
+                        sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
+                };      
+
+                jsym_layer {
                         bindings = <
-&kp  F11      &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp   N6      &kp   N7      &kp   N8      &kp   N9      &kp  N0       &trans
-&kp  F12      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5                                                                        &kp  C_VOL_UP &kp   RSHFT   &kp   RCTRL   &kp   LALT    &kp  RGUI     &trans
-&trans        &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp INS                                            &kp  C_MUTE   &kp  C_VOL_DN &kp   LEFT    &kp   UP      &kp   DOWN    &kp  RIGHT    &kp DEL
-                            &trans                      &trans        &trans        &trans        &mo ADJ_L              &trans        &trans        &trans        &trans                      &kp  RCTRL   
+&kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
+&kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
+&trans        &kp  R_UNDO     &kp  R_CUT      &kp  R_COPY     &kp  R_PASTE    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
+                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJ_L    &trans        &trans        &trans                      &kp  RCTRL    
                         >;
-			
+                	
                         sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
                 };
 		
+                media_layer {
+                        bindings = <
+&trans &kp TASK_MAN &trans &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PGUP &kp UP &kp PGDOWN &kp PSCREEN &kp DELETE
+&trans &kp SWP_WND &kp SAVE   &kp MVW_LEFT &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
+&trans &kp R_UNDO&kp   R_CUT  &kp R_COPY   &kp R_PASTE   &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp RS(LEFT) &kp S(DOWN) &kp S(RIGHT) &kp SEL_END &trans 
+                                     &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
+              >;
+                        
+                        sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
+                };
+                
+                
                 adj_layer {
 /* ADJUST
  * -------------------------------------------------------------------------------------------------------------------------------------
