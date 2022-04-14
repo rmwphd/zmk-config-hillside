@@ -96,7 +96,7 @@
 		
                 num_layer {
                         bindings = <
-&mo ADJ_L &trans &trans &kp UP   &trans &trans                                                               &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
+&mo ADJUST_L &trans &trans &kp UP   &trans &trans                                                               &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
 &trans &trans &kp LEFT  &kp DOWN &kp RIGHT  &trans                                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS     &trans
 &trans &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO  &to QWERTY_L                      &trans   &trans   &kp  N1   &kp  N2   &kp  N3     &kp  SLASH    &trans
                                          &trans &trans &trans  &trans   &trans           &trans  &trans   &kp N0    &kp DOT     &trans   
@@ -122,7 +122,7 @@
 &kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
 &kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
 &trans        &kp  R_UNDO     &kp  R_CUT      &kp  R_COPY     &kp  R_PASTE    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
-                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJ_L    &trans        &trans        &trans                      &kp  RCTRL    
+                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJUST_L    &trans        &trans        &trans                      &kp  RCTRL    
                         >;
 
                         sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
@@ -133,7 +133,7 @@
 &kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
 &kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
 &trans        &kp  R_UNDO     &kp  R_CUT      &kp  R_COPY     &kp  R_PASTE    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
-                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJ_L    &trans        &trans        &trans                      &kp  RCTRL    
+                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJUST_L    &trans        &trans        &trans                      &kp  RCTRL    
                         >;
                 	
                         sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
