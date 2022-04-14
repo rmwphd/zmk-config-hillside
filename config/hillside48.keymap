@@ -27,7 +27,7 @@
 #define R_PASTE     LG(V)
 #define R_SAVE      RG(S)
 #define NEW_TAB     LG(T)
-#define SWP_WND     LG(GRV)
+#define SWP_WND     LG(GRAVE)
 #define R_HOME      LG(LEFT)
 #define R_END       LG(RIGHT)
 #define ZOOM_IN     LG(EQUAL)
@@ -54,10 +54,10 @@
                 // QWERTY
                 default_layer {
                         bindings = <
-&kp  GRAVE    &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P        &kp  BSPC
-&kp  TAB      &kp  A        &lt NUMPAD_L S        &kp  D        &lt FSYM_L  F        &kp  G                                                                         &kp  H        &lt JSYM_L J        &kp  K        &kp  L        &lt EDIT_L SEMI     &kp  ENTER  
-&kp  L_DSK    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  CAPS                                          &kp   ESC     &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &lt MEDIA_L SLASH    &kp  R_DSK
-                            &kp  LCTRL                  &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER    &lt NUMPAD_L SPACE    &kp  LALT     &kp  RGUI                   &kp  SQT   
+&kp  GRAVE    &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
+&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE   &kp  LALT  &kp  RGUI  &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
