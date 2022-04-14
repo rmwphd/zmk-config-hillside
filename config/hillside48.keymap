@@ -25,7 +25,6 @@
 #define R_CUT       LG(X)
 #define R_COPY      LG(C)
 #define R_PASTE     LG(V)
-#define R_SAVE      LG(S)
 #define NEW_TAB     LG(T)
 #define SWP_WND     LG(GRV)
 #define R_HOME      LG(LEFT)
@@ -109,7 +108,7 @@
                 edit_layer {
                         bindings = <
 &trans &kp TASK_MAN &trans &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
-&trans &kp SWP_WND &kp R_SAVE   &kp MVW_LEFT &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
+&trans &kp SWP_WND &kp LG(S)  &kp MVW_LEFT &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
 &trans &kp R_UNDO &kp   R_CUT  &kp R_COPY   &kp R_PASTE   &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp RS(LEFT) &kp S(DOWN) &kp S(RIGHT) &kp SEL_END &trans 
                                      &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
               >;
