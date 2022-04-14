@@ -58,9 +58,9 @@
                 default_layer {
                         bindings = <
 &kp  GRAVE    &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
+                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  RGUI     &kp  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -133,10 +133,10 @@
 		
                 jsym_layer {
                         bindings = <
-&kp  HOME     &kp  EXCL     &kp  AT       &kp  HASH     &kp  DOLLAR   &kp  PERCENT                                                                   &kp  CARET    &kp  AMPS     &kp  ASTRK    &kp  LPAR     &kp  RPAR     &trans
-&kp  END      &kp  LGUI     &kp  LALT     &kp  LCTRL    &kp  LSHFT    &kp  PG_UP                                                                     &kp  MINUS    &kp  EQUAL    &kp  LBKT     &kp  RBKT     &kp  BSLH     &trans
-&trans        &kp  R_UNDO     &kp  R_CUT      &kp  R_COPY     &kp  R_PASTE    &kp  PG_DN    &sk  RALT                                          &kp  K_APP    &kp  UNDER    &kp  PLUS     &kp  LBRC     &kp  RBRC     &kp  PIPE     &trans
-                            &trans                      &trans        &trans        &trans        &trans                 &mo  ADJUST_L    &trans        &trans        &trans                      &kp  RCTRL    
+&trans &kp GRAVE &kp AT &kp LBKT &kp RBKT &trans                                     &trans &trans &trans &trans &trans &to ADJUST_L 
+&trans &kp HASH &kp DLLR &kp LPAR &kp RPAR &kp LEFT                                     &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
+&kp R_DSK  &kp PRCNT  &kp CARET  &kp LBRC  &kp RBRC  &trans  &trans                    &trans &trans &trans &trans &trans &trans &kp L_DSK
+                  &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans    
                         >;
 
                         sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_IN ZOOM_OUT>;
