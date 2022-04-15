@@ -60,6 +60,13 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;
                 };
+                td1: cmd_opt_ctl {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_1";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp RGUI>, <&kp RALT>, <&kp RCTRL>;
+                };
             };
 
         keymap { 
@@ -71,7 +78,7 @@
 &td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                          &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                          &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp ESCAPE                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                                       &none      &kp  LGUI     &kp  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  RGUI     &kp  RCTRL     &none   
+                                       &none      &kp  LGUI     &kp  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &kp  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
