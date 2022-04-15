@@ -68,10 +68,10 @@
                 // QWERTY
                 default_layer {
                         bindings = <
-&td0          &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
-&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  RGUI     &kp  RCTRL     &none   
+&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                          &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                          &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
+&kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp ESCAPE                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+                                       &none      &kp  LGUI     &kp  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  RGUI     &kp  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -79,10 +79,10 @@
 		// MINIMAK
                 minimak4_layer {
                         bindings = <
-&td0         &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
-&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
+&trans   &kp  Q    &kp  W         &kp  D    &kp  R        &kp  K                                           &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&trans   &kp  A    &lt NUMPAD_L S &kp  T    &lt FSYM_L  F &kp  G                                           &kp  H    &lt JSYM_L J  &kp  E        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
+&trans   &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B  &trans                           &trans  &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+                                    &none   &trans     &trans     &trans    &trans         &trans  &trans  &trans    &trans     &none   
                         >;
                         
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -97,10 +97,10 @@
  * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
  */
                         bindings = <
-&td0         &kp  Q    &kp  W         &kp  E    &kp  R        &kp  T                                                                &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D    &lt FSYM_L  F &kp  G                                                                &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
-&kp  L_DSK    &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B     &kp  CAPS                                        &kp ESC   &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                            &none   &kp  LGUI     &kp  LALT     &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &kp  LALT     &kp  RGUI     &none   
+&trans   &kp  Q    &kp  C         &kp  L    &kp  M        &kp  K                                           &kp  Z    &kp  F        &kp  U      &kp  SLASH &kp SEMI       &trans
+&trans   &kp  I    &lt NUMPAD_L S &kp  R    &lt FSYM_L  T &kp  G                                           &kp  P    &lt JSYM_L N  &kp  E      &kp  A     &lt EDIT_L O   &trans  
+&trans   &kp  Y    &kp  V         &kp  W    &kp  D        &kp  J  &trans                           &trans  &kp  B    &kp  H        &kp  COMMA  &kp  DOT   &lt MEDIA_L X  &trans
+                                    &none   &trans     &trans     &trans    &trans         &trans  &trans  &trans    &trans     &none   
                         >;
                         
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
