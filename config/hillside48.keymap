@@ -77,7 +77,7 @@
                         bindings = <
 &td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                          &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                          &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
-&kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp ESCAPE                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+&kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp TAB                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
                                        &none      &kp  LGUI     &kp  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &kp  RCTRL     &none   
                         >;
 			
@@ -151,7 +151,7 @@
                         bindings = <
 &trans &kp GRAVE &kp AT &kp LBKT &kp RBKT &trans                                     &trans &trans &trans &trans &trans &to ADJUST_L 
 &trans &kp HASH &kp DLLR &kp LPAR &kp RPAR &kp LEFT                                     &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
-&kp R_DSK  &kp PRCNT  &kp CARET  &kp LBRC  &kp RBRC  &trans  &trans                    &trans &trans &trans &trans &trans &trans &kp L_DSK
+&kp R_DSK  &kp PRCNT  &kp CARET  &kp LBRC  &kp RBRC  &trans  &kp ESCAPE                    &trans &trans &trans &trans &trans &trans &kp L_DSK
                   &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans    
                         >;
 
