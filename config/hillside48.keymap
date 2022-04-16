@@ -144,7 +144,7 @@
                   &trans &trans &trans &kp DEL_WRD &trans                    &trans &trans &trans &trans &trans    
                         >;
                 	
-                        sensor-bindings = <&inc_dec_kp R_DSK L_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
+                        sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
                 };
 		
                 jsym_layer {
@@ -155,7 +155,6 @@
                   &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans    
                         >;
 
-                        sensor-bindings = <&inc_dec_kp R_DSK L_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
                 };      
 
                 media_layer {
