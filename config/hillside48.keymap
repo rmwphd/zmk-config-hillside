@@ -46,6 +46,7 @@
 #define SEL_DOWN    RS(DOWN)
 #define SEL_RIGHT   RS(RIGHT)
 #define R_SCRNSHT   RS(RG(N4))
+#define SFTCMD      RS(RGUI)
 
 &sk {
     release-after-ms = <900>;
@@ -65,7 +66,7 @@
                         label = "TAP_DANCE_1";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp RGUI>, <&kp RALT>, <&kp RCTRL>;
+                        bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;
                 };
             };
 
@@ -75,10 +76,10 @@
                 // QWERTY
                 default_layer {
                         bindings = <
-&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                          &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                          &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
+&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                       &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                       &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp TAB                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                                       &none      &kp  LGUI     &kp  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &kp  RCTRL     &none   
+                                       &none      &sk  SFTCMD     &sk  LALT  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -86,9 +87,9 @@
 		// MINIMAK
                 minimak4_layer {
                         bindings = <
-&trans   &kp  Q    &kp  W         &kp  D    &kp  R        &kp  K                                           &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
-&trans   &kp  A    &lt NUMPAD_L S &kp  T    &lt FSYM_L  F &kp  G                                           &kp  H    &lt JSYM_L J  &kp  E        &kp  L     &lt EDIT_L SEMI    &kp  ENTER  
-&trans   &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B  &trans                           &trans  &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
+&trans   &kp  Q    &kp  W         &kp  D    &kp  R        &kp  K                                           &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &trans
+&trans   &kp  A    &lt NUMPAD_L S &kp  T    &lt FSYM_L  F &kp  G                                           &kp  H    &lt JSYM_L J  &kp  E        &kp  L     &lt EDIT_L SEMI    &trans
+&trans   &kp  Z    &kp  X         &kp  C    &kp  V        &kp  B  &trans                           &trans  &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &trans
                                     &none   &trans     &trans     &trans    &trans         &trans  &trans  &trans    &trans     &none   
                         >;
                         
@@ -96,7 +97,7 @@
                 };
 		// ISRT
                 ISRT_layer {
-/* COLEMAK-DH
+/* 
  * -------------------------------------------------------------------------------------------------------------------------------------
  * | `     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | BKSPC |
  * | TAB   |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | ENTER |
