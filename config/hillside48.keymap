@@ -47,6 +47,9 @@
 #define SEL_RIGHT   RS(RIGHT)
 #define R_SCRNSHT   RS(RG(N4))
 #define SFTCMD      RS(RGUI)
+#define SEL_ALL     RG(A)
+#define SWP_APP     RG(TAB)
+
 
 &sk {
     release-after-ms = <900>;
@@ -68,7 +71,7 @@
                         tapping-term-ms = <300>;
                         bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;
                 };
-                td1: opt_cmd_ctl {
+                td2: opt_cmd_ctl {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_2";
                         #binding-cells = <0>;
@@ -135,9 +138,9 @@
                 
                 edit_layer {
                         bindings = <
-&trans &kp TASK_MAN &trans    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
-&trans &kp SWP_WND  &kp S     &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
-&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp TAB                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
+&trans &kp TASK_MAN &kp SWP_WND    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
+&trans &kp SEL_ALL  &kp R_SAVE     &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
+&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp SWP_APP                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
                                      &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
               >;
                         
