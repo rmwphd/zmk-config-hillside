@@ -55,6 +55,8 @@
     release-after-ms = <900>;
 };
 
+// when I get the trackball working, holding down N (or enter??) should mo scrolling mode!
+
 / {
         behaviors {
                 td0: backforward {
@@ -160,10 +162,10 @@
 		
                 jsym_layer {
                         bindings = <
-&trans &kp GRAVE &kp AT &kp LBKT &kp RBKT &trans                                       &trans &trans &trans &trans &trans &to ADJUST_L 
-&trans &kp HASH &kp DLLR &kp LPAR &kp RPAR &kp LEFT                                    &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
-&kp R_DSK  &kp PRCNT  &kp CARET  &kp LBRC  &kp RBRC  &trans  &kp ESCAPE         &trans &trans &trans &trans &trans &trans &kp L_DSK
-                  &trans &trans &trans &trans &trans                     &trans &trans &trans &trans &trans    
+&trans    &kp GRAVE &kp AT    &kp LBRC &kp RBRC  &trans                         &trans &trans &trans &trans &trans &to ADJUST_L 
+&trans    &kp HASH  &kp DLLR  &kp LPAR &kp RPAR  &kp LEFT                       &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
+&kp R_DSK &kp PRCNT &kp CARET &kp LBKT &kp RBKT  &trans   &kp ESCAPE     &trans &trans &trans &trans &trans &trans &kp L_DSK
+                    &trans    &trans   &trans    &trans   &trans         &trans &trans &trans &trans &trans    
                         >;
 
                 };      
