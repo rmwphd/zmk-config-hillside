@@ -53,6 +53,7 @@
 
 &sk {
     release-after-ms = <900>;
+    quick-release;
 };
 
 // when I get the trackball working, holding down N (or enter??) should mo scrolling mode!
