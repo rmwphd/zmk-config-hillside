@@ -98,10 +98,10 @@
                 // QWERTY
                 default_layer {
                         bindings = <
-&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                       &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &kp  BSPC
+&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                       &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &to  NUMPAD_L
 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                       &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp TAB                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                                       &none      &sk  SFTCMD     &td2  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
+                                       &none      &sk  SFTCMD     &td1  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -138,7 +138,7 @@
 		
                 num_layer {
                         bindings = <
-&mo ADJUST_L &trans     &trans    &kp UP     &trans      &trans                                        &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &trans
+&mo ADJUST_L &trans     &trans    &kp UP     &trans      &trans                                        &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS    &to EDIT_L
 &trans       &trans     &kp LEFT  &kp DOWN   &kp RIGHT   &trans                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS     &trans
 &trans       &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO &to QWERTY_L              &trans   &trans   &kp  N1   &kp  N2   &kp  N3     &kp  SLASH    &trans
                                          &trans &trans &trans &trans &trans           &trans  &trans  &kp N0  &kp DOT  &trans   
@@ -150,9 +150,9 @@
                 
                 edit_layer {
                         bindings = <
-&trans &kp TASK_MAN &kp SWP_WND    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                        &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &kp DELETE
+&trans &kp TASK_MAN &kp SWP_WND    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                            &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &to QWERTY_L
 &trans &kp SEL_ALL  &kp R_SAVE     &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
-&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &kp SWP_APP                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
+&trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &trans                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
                                      &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
               >;
                         
