@@ -60,7 +60,7 @@
 
 / {
         behaviors {
-                td0: backforward {
+                bkfwd: backforward {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_0";
                         #binding-cells = <0>;
@@ -90,6 +90,13 @@
                         quick-tap-ms = <200>;
                         bindings = <&kp>, <&kp>;
                 };
+                shcaps: shcapslock {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_0";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <300>;
+                        bindings = <&sk LSHIFT>, <&caps_word>;
+                };
             };
 
         keymap { 
@@ -98,10 +105,10 @@
                 // QWERTY
                 default_layer {
                         bindings = <
-&td0          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                       &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &to  NUMPAD_L
+&bkfwd          &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                                       &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &to  NUMPAD_L
 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                                       &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI    &kp  SQT  
 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp TAB                                                 &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp  R_DSK
-                                       &none      &sk  SFTCMD     &td1  &lt EDIT_L BSPC    &sk LSHIFT             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
+                                       &none      &sk  SFTCMD     &td1  &lt EDIT_L BSPC    &shcaps             &mt LSHFT ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -121,10 +128,10 @@
                 ISRT_layer {
 /* 
  * -------------------------------------------------------------------------------------------------------------------------------------
- * | `     |   Q   |   W   |   F   |   P   |   B   |-----------------------------------|   J   |   L   |   U   |   Y   |   ;   | BKSPC |
- * | TAB   |   A   |   R   |   S   |   T   |   G   |-----------------------------------|   M   |   N   |   E   |   I   |   O   | ENTER |
- * | SHIFT |   Z   |   X   |   C   |   D   |   V   | CAPS  |-------------------|  ESC  |   K   |   H   |   ,   |   .   |   /   | SHIFT |
- * ----------------| CTRL  |-------|  GUI  |  ALT  | SPACE |  Sym  |---|  Num  | SPACE |  ALT  |  GUI  |-------|   '   |----------------
+ * |       |   Q   |   C   |   L   |   M   |   K   |-----------------------------------|   Z   |   F   |   U   |   '   |   ;   |       |
+ * |       |   I   |   S   |   R   |   T   |   G   |-----------------------------------|   P   |   N   |   E   |   A   |   O   |       |
+ * |       |   Y   |   V   |   W   |   D   |   J   |       |-------------------|       |   B   |   H   |   ,   |   .   |   X   |       |
+ * ----------------|       |-------|       |       |       |       |---|       |       |       |       |-------|       |----------------
  */
                         bindings = <
 &trans   &kp  Q    &kp  C         &kp  L    &kp  M        &kp  K                                           &kp  Z    &kp  F        &kp  U      &kp  SLASH &kp SEMI       &trans
