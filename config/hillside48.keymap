@@ -56,6 +56,8 @@
     quick-release;
 };
 
+&lt { quick_tap_ms = <200>; };
+
 // when I get the trackball working, holding down N (or enter??) should mo scrolling mode!
 
 / {
