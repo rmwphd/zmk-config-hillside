@@ -187,6 +187,7 @@
 &kp R_DSK &kp PRCNT &kp CARET &kp LBKT &kp RBKT  &trans   &kp ESCAPE     &trans &trans &trans &trans &trans &trans &kp L_DSK
                     &trans    &trans   &trans    &trans   &trans         &trans &trans &trans &trans &trans    
                         >;
+                        sensor-bindings = <&inc_dec_kp R_DSK L_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
 
                 };      
 
