@@ -96,6 +96,20 @@
         // COMBO(reset_l, &bootloader, 0 1 2 3, 100)
         // COMBO(reset_right, &bootloader, 6 7 8 9, 100)
     };
+
+    macros {
+        ZMK_MACRO(pair_par,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp LPAR &kp RPAR>;
+            )
+        ZMK_MACRO(pair_par2,
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp LPAR &kp RPAR <&kp LEFT>;
+            )
+        }
+    }
     
     behaviors {
         bkfwd: backforward {
@@ -140,7 +154,7 @@
                 label = "TAP_DANCE_PAR";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LPAR>, <&kp LPAR &kp RPAR>, <&kp LPAR &kp RPAR &kp LEFT>;
+                bindings = <&kp LPAR>, <&kp LPAR &kp RPAR>, <&pair_par>;
         };
     };
 
@@ -247,10 +261,10 @@
 
         adj_layer {
                 bindings = <
-                &none         &to  QWERTY_L &to  MINIMAK4_L &to  ISRT_L &none         &none                                                                   &none      &kp PRINTSCREEN    &none         &ext_power EP_OFF  &ext_power EP_ON &to QWERTY_L
-                &none         &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                                           &none      &none              &none         &none              &none            &none
-                &bootloader   &none        &none         &out OUT_USB  &out OUT_BLE  &none         &bt BT_CLR                                     &none      &none      &none              &none         &none              &none            &trans
-                &trans                      &trans        &trans        &trans        &trans             &bt BT_CLR    &trans     &trans     &trans                           &kp  RCTRL   
+                &none         &to  QWERTY_L &to  MINIMAK4_L &to  ISRT_L &none         &none                                         &none      &kp PRINTSCREEN    &none         &ext_power EP_OFF  &ext_power EP_ON &to QWERTY_L
+                &none         &bt  BT_SEL 0 &bt  BT_SEL 1 &bt  BT_SEL 2 &bt  BT_SEL 3 &bt  BT_SEL 4                                 &none      &none              &none         &none              &none            &none
+                &bootloader   &none        &none         &out OUT_USB  &out OUT_BLE  &none   &bt BT_CLR                  &none      &none      &none              &none         &none              &none            &trans
+                &trans        &trans       &trans        &trans        &trans        &bt BT_CLR                 &trans   &trans     &trans                           &kp  RCTRL   
                 >;
 
                 sensor-bindings = <&inc_dec_kp ZOOM_OUT ZOOM_IN &inc_dec_kp PG_DN PG_UP>;
