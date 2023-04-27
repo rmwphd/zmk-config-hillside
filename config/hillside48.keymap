@@ -259,8 +259,8 @@
 
         layerleader_layer {
                 bindings = <
-                &none  &none &none    &none &none  &none                      &none  &none      &none  &none  &to         &to QWERTY_L
-                &none  &none &to NUMPAD_L   &none  &to FSYM_L &none           &none  &to JSYM_L &none  &none  &EDIT_L     &none
+                &none  &none &none    &none &none  &none                      &none  &none      &none  &none  &none       &to QWERTY_L
+                &none  &none &to NUMPAD_L   &none  &to FSYM_L &none           &none  &to JSYM_L &none  &none  &to EDIT_L  &none
                 &none  &none &none    &none &none  &none      &none    &none  &none      &none  &none  &none  &to MEDIA_L &trans
                 &trans &trans     &trans &trans   &trans &none  &trans  &trans    &trans      &none   
                 >;
