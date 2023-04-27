@@ -100,9 +100,8 @@
     macros {
         ZMK_MACRO(pair_par, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LPAR &kp RPAR>;)
         ZMK_MACRO(pair_par2, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LPAR &kp RPAR>, <&kp LEFT>;)
-        }
-    }
-    
+        };
+
     behaviors {
         bkfwd: backforward {
                 compatible = "zmk,behavior-tap-dance";
