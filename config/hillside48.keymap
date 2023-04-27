@@ -96,7 +96,7 @@
         // COMBO(reset_l, &bootloader, 0 1 2 3, 100)
         // COMBO(reset_right, &bootloader, 6 7 8 9, 100)
     };
-/ {
+    
     behaviors {
         bkfwd: backforward {
                 compatible = "zmk,behavior-tap-dance";
@@ -144,7 +144,7 @@
         };
     };
 
-keymap { 
+    keymap { 
         compatible = "zmk,keymap";
 
                 // QWERTY
