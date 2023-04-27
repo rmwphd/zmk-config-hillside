@@ -145,7 +145,7 @@
                 label = "TAP_DANCE_PAR";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LPAR>, <&kp LPAR &kp RPAR>, <&pair_par>;
+                bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;
         };
     };
 
