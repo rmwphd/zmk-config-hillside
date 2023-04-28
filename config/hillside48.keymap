@@ -83,14 +83,14 @@
           ╰───────╮ 38  39  40  41 42 ││ 43 44  45 46 47 ╭───────╯
                   ╰───────────────────╯╰─────────────────╯        */
 
-        COMBO(tab,     &kp TAB,    4 14,    30)
-        COMBO(escape,  &kp ESCAPE, 0 11,    30)
+        COMBO(tab,     &kp TAB,    17 29,    30)
+        COMBO(escape,  &kp ESCAPE, 4 5,    30)
         //COMBO(colon,   &kp COLON,  7 8,     30)
-        //COMBO(sqt,     &kp SQT,    9 19,    30)
+        COMBO(sqt,     &kp SQT,    10 22,    30)
         //COMBO(minus,   &kp MINUS,  31 32,   10)
         //COMBO(uscore,  &kp UNDER,  33 34,   10)
-        COMBO(dskr,    &kp R_DSK,  19 29,   10)
-        COMBO(dskl,    &kp L_DSK,  10 20,   10)
+        COMBO(dskr,    &kp R_DSK,  22 36,   10)
+        COMBO(dskl,    &kp L_DSK,  12 24,   10)
         //COMBO(equal, &kp EQUAL, 12 23, 100)
         //COMBO(enter, &kp ENTER, 17 26, 60)
         // COMBO(reset_l, &bootloader, 0 1 2 3, 100)
@@ -100,6 +100,11 @@
     macros {
         ZMK_MACRO(pair_par, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LPAR &kp RPAR>;)
         ZMK_MACRO(pair_par2, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LPAR &kp RPAR>, <&kp LEFT>;)
+        ZMK_MACRO(pair_brc, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBRC &kp RBRC>;)
+        ZMK_MACRO(pair_brc2, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBRC &kp RBRC>, <&kp LEFT>;)
+        ZMK_MACRO(pair_bkt, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBKT &kp RBKT>;)
+        ZMK_MACRO(pair_bkt2, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBKT &kp RBKT>, <&kp LEFT>;)
+        ZMK_MACRO(ltgt_pair, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LT &kp GT>, <&kp LEFT>;)
         };
 
     behaviors {
@@ -147,6 +152,20 @@
                 tapping-term-ms = <300>;
                 bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;
         };
+        td_brc_pair: td_brc_pair {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_PAR";
+                #binding-cells = <0>;
+                tapping-term-ms = <300>;
+                bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;
+        };
+        td_bkt_pair: td_bkt_pair {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_PAR";
+                #binding-cells = <0>;
+                tapping-term-ms = <300>;
+                bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;
+        };
     };
 
     keymap { 
@@ -155,10 +174,10 @@
                 // QWERTY
         default_layer {
                 bindings = <
-                &bkfwd        &kp  Q    &kp  W         &kp  E     &kp  R        &kp  T                                                              &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P            &to LAYERLEADER_L
-                &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F &kp  G                                                              &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SQT    &kp SLASH  
-                &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V        &kp  B     &kp TAB                                        &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SEMI  &kp R_DSK
-                &none      &sk  SFTCMD     &td1  &lt EDIT_L BSPC    &shcaps             &kp ENTER  &lt NUMPAD_L SPACE  &td1          &sk  RCTRL     &none   
+                &bkfwd        &kp  Q    &kp  W         &kp  E     &kp  R          &kp  T                            &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P            &to LAYERLEADER_L
+                &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                            &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI   &kp SQT
+                &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V          &kp  B   &kp TAB        &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp R_DSK
+                              &none     &sk  SFTCMD    &td1       &lt EDIT_L BSPC &shcaps                 &kp ENTER  &lt NUMPAD_L SPACE  &td1   &sk  RCTRL     &none   
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -184,10 +203,10 @@
  * ----------------|       |-------|       |       |       |       |---|       |       |       |       |-------|       |----------------
  */
                 bindings = <
-                &trans   &kp  Q    &kp  C         &kp  L    &kp  M        &kp  K                                           &kp  Z    &kp  F        &kp  U      &kp  SQT   &kp SEMI       &trans
-                &trans   &kp  I    &lt NUMPAD_L S &kp  R    &lt FSYM_L  T &kp  G                                           &kp  P    &lt JSYM_L N  &kp  E      &kp  A     &lt EDIT_L O   &trans  
-                &trans   &kp  Y    &kp  V         &kp  W    &kp  D        &kp  J  &trans                           &trans  &kp  B    &kp  H        &kp  COMMA  &kp  DOT   &lt MEDIA_L X  &trans
-                &none   &trans     &trans     &trans    &trans         &trans  &trans  &trans    &trans     &none   
+                &trans   &kp  Q    &kp  C         &kp  L    &kp  M        &kp  K                            &kp  Z    &kp  F        &kp  U      &kp  SQT   &kp SEMI       &trans
+                &trans   &kp  I    &lt NUMPAD_L S &kp  R    &lt FSYM_L  T &kp  G                            &kp  P    &lt JSYM_L N  &kp  E      &kp  A     &lt EDIT_L O   &trans  
+                &trans   &kp  Y    &kp  V         &kp  W    &kp  D        &kp  J  &trans            &trans  &kp  B    &kp  H        &kp  COMMA  &kp  DOT   &lt MEDIA_L X  &trans
+                                   &none          &trans    &trans        &trans  &trans            &trans  &trans    &trans        &trans      &none   
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
@@ -197,7 +216,7 @@
                 bindings = <
                 &mo ADJUST_L &trans     &trans    &kp UP     &trans      &trans                                        &trans   &kp  N7   &kp  N8   &kp  N9     &kp  MINUS   &to QWERTY_L
                 &trans       &trans     &kp LEFT  &kp DOWN   &kp RIGHT   &trans                                        &trans   &kp  N4   &kp  N5   &kp  N6     &kp  PLUS    &trans
-                &trans       &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO &to QWERTY_L              &trans   &kp N0   &kp  N1   &kp  N2   &kp  N3     &kp  DOT     &trans
+                &trans       &kp R_UNDO &kp R_CUT &kp R_COPY &kp R_PASTE &kp R_REDO &to trans              &trans   &kp N0   &kp  N1   &kp  N2   &kp  N3     &kp  DOT     &trans
                 &trans &trans &trans &trans &trans           &trans  &trans  &kp N0  &kp DOT  &trans   
 
                 >;
@@ -207,10 +226,10 @@
 
         edit_layer {
                 bindings = <
-                &trans &kp TASK_MAN &kp SWP_WND    &kp SELW_LEFT &kp SELW_RIGHT &trans                                                                            &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &to QWERTY_L
-                &trans &kp SEL_ALL  &trans         &kp MVW_LEFT  &kp MVW_RIGHT  &trans                                                       &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
-                &trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &trans                           &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
-                &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans &trans
+                &trans &kp TASK_MAN &kp SWP_WND    &kp SELW_LEFT &kp SELW_RIGHT &trans                           &kp NEW_TAB &kp PG_UP &kp UP &kp PG_DN &kp PSCRN &to QWERTY_L
+                &trans &kp SEL_ALL  &trans         &kp MVW_LEFT  &kp MVW_RIGHT  &trans                           &kp  R_HOME  &kp LEFT &kp DOWN &kp RIGHT &kp R_END &trans
+                &trans &kp R_UNDO   &kp R_CUT &kp R_COPY    &kp R_PASTE    &kp R_REDO &trans        &to QWERTY_L &kp SEL_HOME &kp SEL_LEFT &kp SEL_DOWN &kp SEL_RIGHT &kp SEL_END &trans 
+                &trans  &trans  &trans  &trans  &trans                                                   &trans  &trans  &trans  &trans &trans
                 >;
 
                 sensor-bindings = <&inc_dec_kp ZOOM_OUT ZOOM_IN &inc_dec_kp R_DSK L_DSK>;
@@ -220,7 +239,7 @@
                 bindings = <
                 &to QWERTY_L &trans &trans &trans &trans &trans                                     &kp CARET &kp AMPS &kp ASTRK &kp GRAVE &trans &trans 
                 &trans &trans  &kp TILDE &kp EXCL &trans &trans                                     &kp EQUAL &kp MINUS &kp UNDER &kp BSLH &kp COLON &kp DQT 
-                &kp R_DSK  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE                &trans &trans &kp PLUS &kp SLASH &kp PIPE &trans &trans 
+                &kp R_DSK  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE                &trans &trans &kp PLUS &kp PIPE &kp SLASH &trans &trans 
                 &trans &trans &trans &kp DEL_WRD &trans                    &trans &trans &trans &trans &trans    
                 >;
 
@@ -229,9 +248,9 @@
 
         jsym_layer {
                 bindings = <
-                &trans    &kp GRAVE &kp AT    &kp LBRC &kp RBRC  &trans                         &trans &trans &trans &trans &trans &to QWERTY_L 
-                &trans    &kp HASH  &kp DLLR  &td_par_pair &kp RPAR  &kp LEFT                       &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
-                &kp R_DSK &kp PRCNT &kp CARET &kp LBKT &kp RBKT  &trans   &kp ESCAPE     &trans &trans &trans &trans &trans &trans &kp L_DSK
+                &trans    &kp GRAVE &kp AT    &td_brc_pair &kp RBRC  &trans                         &trans &trans &trans &trans &trans &to QWERTY_L 
+                &trans    &kp HASH  &kp DLLR  &td_par_pair &kp RPAR  &ltgt_pair                       &trans &trans &kp QMARK &kp SLASH &kp COLON &kp DQT 
+                &kp R_DSK &kp PRCNT &kp CARET &td_bkt_pair &kp RBKT  &trans   &kp ESCAPE     &trans &trans &trans &trans &trans &trans &kp L_DSK
                 &trans    &trans   &trans    &trans   &trans         &trans &trans &trans &trans &trans    
                 >;
                 sensor-bindings = <&inc_dec_kp R_DSK L_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
@@ -264,10 +283,10 @@
 
         layerleader_layer {
                 bindings = <
-                &none  &none &none    &none &none  &none                      &none  &none      &none  &none  &none       &to QWERTY_L
-                &none  &none &to NUMPAD_L   &none  &to FSYM_L &none           &none  &to JSYM_L &none  &none  &to EDIT_L  &none
-                &none  &none &none    &none &none  &none      &none    &none  &none      &none  &none  &none  &to MEDIA_L &trans
-                &trans &trans     &trans &trans   &trans &none  &trans  &trans    &trans      &none   
+                &none  &none &none    &none &none  &none                                 &none  &none      &none       &none  &to NUMPAD_L &to QWERTY_L
+                &none  &none &to NUMPAD_L   &none  &to FSYM_L &none                      &none  &to JSYM_L &to FSYM_L  &none  &to EDIT_L   &none
+                &none  &none &none    &none &none  &none      &none               &none  &none  &none      &none       &none  &to MEDIA_L  &trans
+                             &none    &trans &trans &to EDIT_L &to QWERTY_L       &to QWERTY_L  &to NUMPAD_L  &trans    &trans      &none   
                 >;
 
                 sensor-bindings = <&inc_dec_kp ZOOM_OUT ZOOM_IN &inc_dec_kp PG_DN PG_UP>;
