@@ -154,14 +154,14 @@
         };
         td_brc_pair: td_brc_pair {
                 compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_PAR";
+                label = "TAP_DANCE_BRC";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
                 bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;
         };
         td_bkt_pair: td_bkt_pair {
                 compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_PAR";
+                label = "TAP_DANCE_BKT";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
                 bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;
