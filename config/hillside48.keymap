@@ -108,6 +108,13 @@
         };
 
     behaviors {
+        #define TAPDANCE(name,...) \
+            name: name { \
+            label = ZMK_MACRO_STRINGIFY(ZM_ ## name); \
+            compatible = "zmk,behavior-tap-dance"; \
+            #binding-cells = <0>; \
+            __VA_ARGS__ \
+        };
         bkfwd: backforward {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_0";
@@ -145,13 +152,13 @@
                 tapping-term-ms = <300>;
                 bindings = <&sk LSHIFT>, <&caps_word>;
         };
-        td_par_pair: td_par_pair {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_PAR";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;
-        };
+        TAPDANCE(td_par_pair, tapping-term-ms = <300>; bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;)
+        //         compatible = "zmk,behavior-tap-dance";
+        //         label = "TAP_DANCE_PAR";
+        //         #binding-cells = <0>;
+        //         tapping-term-ms = <300>;
+        //         bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;
+        // };
         td_brc_pair: td_brc_pair {
                 compatible = "zmk,behavior-tap-dance";
                 label = "TAP_DANCE_BRC";
