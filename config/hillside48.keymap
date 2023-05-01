@@ -115,27 +115,6 @@
             #binding-cells = <0>; \
             __VA_ARGS__ \
         };
-        bkfwd: backforward {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_0";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;
-        };
-        td1: cmd_opt_ctl {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_1";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;
-        };
-        td2: opt_cmd_ctl {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_2";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&sk RALT>, <&sk RGUI>, <&sk RCTRL>;
-        };
         ht: hold-tap {
                 compatible = "zmk,behavior-hold-tap";
                 label = "HOLD_TAP";
@@ -145,34 +124,13 @@
                 quick-tap-ms = <200>;
                 bindings = <&kp>, <&kp>;
         };
-        shcaps: shcapslock {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_3";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&sk LSHIFT>, <&caps_word>;
-        };
+        TAPDANCE(bkfwd, tapping-term-ms = <300>; bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;)
+        TAPDANCE(td1, tapping-term-ms = <300>; bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;)
+        TAPDANCE(td2, tapping-term-ms = <300>; bindings = <&sk RALT>, <&sk RGUI>, <&sk RCTRL>;)
+        TAPDANCE(shcaps, tapping-term-ms = <300>; bindings = <&sk LSHIFT>, <&caps_word>;)
         TAPDANCE(td_par_pair, tapping-term-ms = <300>; bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;)
-        //         compatible = "zmk,behavior-tap-dance";
-        //         label = "TAP_DANCE_PAR";
-        //         #binding-cells = <0>;
-        //         tapping-term-ms = <300>;
-        //         bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;
-        // };
-        td_brc_pair: td_brc_pair {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_BRC";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;
-        };
-        td_bkt_pair: td_bkt_pair {
-                compatible = "zmk,behavior-tap-dance";
-                label = "TAP_DANCE_BKT";
-                #binding-cells = <0>;
-                tapping-term-ms = <300>;
-                bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;
-        };
+        TAPDANCE(td_brc_pair, tapping-term-ms = <300>; bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;)
+        TAPDANCE(td_bkt_pair, tapping-term-ms = <300>; bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;)
     };
 
     keymap { 
