@@ -6,10 +6,15 @@ manifest:
       url-base: https://github.com/rmwphd
     - name: cdc-mkb
       url-base: https://github.com/cdc-mkb # name: zmk, revision: mouse-pim447
+    - name: split-encoder
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: split-encoder
+      revision: stephen/split-encoder
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
       import: app/west.yml
   self:
     path: config

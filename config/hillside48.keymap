@@ -90,11 +90,13 @@
         //COMBO(minus,   &kp MINUS,  31 32,   10)
         //COMBO(uscore,  &kp UNDER,  33 34,   10)
         COMBO(dskr,    &kp R_DSK,  22 36,   10)
-        COMBO(dskl,    &kp L_DSK,  12 24,   10)
+        COMBO(dskl,    &kp L_DSK,  13 25,   10)
         //COMBO(equal, &kp EQUAL, 12 23, 100)
         //COMBO(enter, &kp ENTER, 17 26, 60)
-        // COMBO(reset_l, &bootloader, 0 1 2 3, 100)
-        // COMBO(reset_right, &bootloader, 6 7 8 9, 100)
+        COMBO(reset_l, &bootloader, 0 1 2 3, 100)
+        COMBO(reset_right, &bootloader, 6 7 8 9, 100)
+        // dude cross-hand combos are awesome! 
+        COMBO(selall, &kp RGUI &kp A, 17 18, 10)
     };
 
     macros {
