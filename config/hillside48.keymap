@@ -51,8 +51,8 @@
 #define SEL_ALL     RG(A)
 #define SWP_APP     RG(TAB)
 
-&left_encoder { resolution = <6>; };
-&right_encoder { resolution = <6>; };
+&left_encoder { resolution = <4>; };
+&right_encoder { resolution = <4>; };
 
 &sk {
     release-after-ms = <900>;
