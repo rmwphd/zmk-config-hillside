@@ -139,6 +139,7 @@
         TAPDANCE(td1, tapping-term-ms = <300>; bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;)
         TAPDANCE(td2, tapping-term-ms = <300>; bindings = <&sk RALT>, <&sk RGUI>, <&sk RCTRL>;)
         TAPDANCE(shcaps, tapping-term-ms = <300>; bindings = <&sk LSHIFT>, <&caps_word>;)
+        TAPDANCE(shcaps2, tapping-term-ms = <300>; bindings = <&sk LSHIFT>, <&caps_word>, <&kp CAPSLOCK>;)
         TAPDANCE(td_par_pair, tapping-term-ms = <300>; bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;)
         TAPDANCE(td_brc_pair, tapping-term-ms = <300>; bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;)
         TAPDANCE(td_bkt_pair, tapping-term-ms = <300>; bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;)
@@ -153,7 +154,7 @@
                 &bkfwd        &kp  Q    &kp  W         &kp  E     &kp  R          &kp  T                            &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P            &to LAYERLEADER_L
                 &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                            &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI   &kp SQT
                 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V          &kp  B   &kp TAB        &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp R_DSK
-                              &none     &sk  SFTCMD    &td1       &lt EDIT_L BSPC &shcaps                 &kp ENTER  &lt NUMPAD_L SPACE  &td1   &sk  RCTRL     &none   
+                              &none     &sk  SFTCMD    &td1       &lt EDIT_L BSPC &shcaps2                 &kp ENTER  &lt NUMPAD_L SPACE  &td1   &sk  RCTRL     &none   
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&scroll3>;
