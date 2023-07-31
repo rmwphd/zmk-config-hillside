@@ -128,7 +128,7 @@
                 bindings = <&kp>, <&kp>;
         };
         scroll3: scroll-three-lines {
-            compatible = "zmk,behavior-sensor-rotate-var";
+            compatible = "zmk,behavior-sensor-rotate";
             label = "scroll3";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP &kp UP &kp UP>, <&kp DOWN &kp DOWN &kp DOWN>;
