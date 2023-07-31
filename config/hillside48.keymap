@@ -154,7 +154,7 @@
                               &none     &sk  SFTCMD    &td1       &lt EDIT_L BSPC &shcaps                 &kp ENTER  &lt NUMPAD_L SPACE  &td1   &sk  RCTRL     &none   
                 >;
 
-                sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &scroll3>;
+                sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&scroll3>;
         };
 		// MINIMAK
         minimak4_layer {
@@ -165,7 +165,7 @@
                 &none   &trans     &trans     &trans    &trans         &trans  &trans  &trans    &trans     &none   
                 >;
 
-                sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+                sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_DN PG_UP>;
         };
 		// ISRT
         ISRT_layer {
