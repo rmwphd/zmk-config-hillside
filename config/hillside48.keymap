@@ -108,6 +108,8 @@
         ZMK_MACRO(pair_bkt, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBKT &kp RBKT>;)
         ZMK_MACRO(pair_bkt2, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LBKT &kp RBKT>, <&kp LEFT>;)
         ZMK_MACRO(ltgt_pair, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LT &kp GT>, <&kp LEFT>;)
+        ZMK_MACRO(up3, wait-ms = <30>; tap-ms = <40>; bindings = <&kp UP &kp UP &kp UP>;)
+        ZMK_MACRO(down3, wait-ms = <30>; tap-ms = <40>; bindings = <&kp DOWN &kp DOWN &kp DOWN>;)
         };
 
     behaviors {
@@ -131,7 +133,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "scroll3";
             #sensor-binding-cells = <0>;
-            bindings = <&kp UP &kp UP &kp UP>, <&kp DOWN &kp DOWN &kp DOWN>;
+            bindings = <&up3>, <&down3>;
         };
         TAPDANCE(bkfwd, tapping-term-ms = <300>; bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;)
         TAPDANCE(td1, tapping-term-ms = <300>; bindings = <&sk RGUI>, <&sk RALT>, <&sk RCTRL>;)
@@ -195,7 +197,7 @@
 
                 >;
 
-                sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &inc_dec_kp C_BRI_DN C_BRI_UP >;
+                sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP &inc_dec_kp L R >;
         };
 
         edit_layer {
