@@ -130,7 +130,7 @@
         scroll3: scroll-three-lines {
             compatible = "zmk,behavior-sensor-rotate-var";
             label = "scroll3";
-            #sensor-binding-cells = <2>;
+            #sensor-binding-cells = <0>;
             bindings = <&kp UP &kp UP &kp UP>, <&kp DOWN &kp DOWN &kp DOWN>;
         };
         TAPDANCE(bkfwd, tapping-term-ms = <300>; bindings = <&kp LG(LEFT)>, <&kp LG(RIGHT)>;)
