@@ -98,6 +98,11 @@
         COMBO(reset_right, &bootloader, 6 7 8 9, 100)
         // dude cross-hand combos are awesome! 
         COMBO(selall, &kp RGUI &kp A, 17 18, 10)
+        // put in cross-hand homerow mod sticky combos???? 
+        COMBO(cmd, &sk RGUI, 16 19, 10)
+        COMBO(opt, &sk RALT, 15 20, 10)
+        COMBO(ctrl, &sk RCTRL, 14 21, 10)
+        COMBO(cmdctrl, &sk RGUI &sk RCTRL, 13 22, 10)
     };
 
     macros {
@@ -110,6 +115,7 @@
         ZMK_MACRO(ltgt_pair, wait-ms = <30>; tap-ms = <40>; bindings = <&kp LT &kp GT>, <&kp LEFT>;)
         ZMK_MACRO(up3, wait-ms = <30>; tap-ms = <40>; bindings = <&kp UP &kp UP &kp UP>;)
         ZMK_MACRO(down3, wait-ms = <30>; tap-ms = <40>; bindings = <&kp DOWN &kp DOWN &kp DOWN>;)
+        ZMK_MACRO(quotes, wait-ms = <30>; tap-ms = <40>; bindings = <&kp DQT &kp DQT &kp LEFT>;)
         };
 
     behaviors {
@@ -143,6 +149,8 @@
         TAPDANCE(td_par_pair, tapping-term-ms = <300>; bindings = <&kp LPAR>, <&pair_par>, <&pair_par2>;)
         TAPDANCE(td_brc_pair, tapping-term-ms = <300>; bindings = <&kp LBRC>, <&pair_brc>, <&pair_brc2>;)
         TAPDANCE(td_bkt_pair, tapping-term-ms = <300>; bindings = <&kp LBKT>, <&pair_bkt>, <&pair_bkt2>;)
+        TAPDANCE(quotespair, tapping-term-ms = <300>; bindings = <&kp DQT>, <&quotes>;)
+        // hmm, what's the best way to change shifted SQT to be that tapdance?
     };
 
     keymap { 
@@ -171,6 +179,7 @@
                 sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&inc_dec_kp PG_DN PG_UP>;
         };
 		// ISRT
+                // make this Hands Down Neu or Gold instead
         ISRT_layer {
 /* 
  * -------------------------------------------------------------------------------------------------------------------------------------
