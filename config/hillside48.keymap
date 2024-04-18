@@ -155,7 +155,7 @@
         sdtdqt: sqt_dqt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp squotespair>, <&dquotespair>;
+            bindings = <&squotespair>, <&dquotespair>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
