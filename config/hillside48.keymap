@@ -154,6 +154,7 @@
         TAPDANCE(dquotespair, tapping-term-ms = <300>; bindings = <&kp DQT>, <&dquotes>;)
         sdtdqt: sqt_dqt {
             compatible = "zmk,behavior-mod-morph";
+            label = "sqtdqt";
             #binding-cells = <0>;
             bindings = <&squotespair>, <&dquotespair>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
