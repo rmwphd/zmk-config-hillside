@@ -168,7 +168,7 @@
         default_layer {
                 bindings = <
                 &bkfwd        &kp  Q    &kp  W         &kp  E     &kp  R          &kp  T                            &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P            &to LAYERLEADER_L
-                &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                            &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SEMI   &sdtdqt
+                &sl  EDIT_L   &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                            &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SQT   &sdtdqt
                 &kp  L_DSK    &kp  Z    &kp  X         &kp  C     &kp  V          &kp  B   &kp TAB        &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &kp R_DSK
                               &none     &sk  SFTCMD    &td1       &lt EDIT_L BSPC &shcaps2                 &kp ENTER  &lt NUMPAD_L SPACE  &td1   &sk  RCTRL     &none   
                 >;
