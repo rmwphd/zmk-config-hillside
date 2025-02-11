@@ -171,10 +171,10 @@
                 // QWERTY
         default_layer {
                 bindings = <
-                &none    &kp  Q    &kp  W         &kp  E     &kp  R          &kp  T                            &kp  Y    &kp  U        &kp  I        &kp  O     &kp  P             &none
-                &none    &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                            &kp  H    &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SQT     &none
-                &none    &kp  Z    &kp  X         &kp  C     &kp  V          &kp  B   &kp TAB        &none     &kp  N    &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &none
-                              &none     &kp L_DSK    &lt EDIT_L BSPC &shcaps2   &none                              &none      &kp SPACE     &lt NUMPAD_L ENTER    &kp R_DSK     &none   
+                &none    &kp  Q    &kp  W         &kp  E     &kp  R          &kp  T                              &kp  Y       &kp  U        &kp  I        &kp  O     &kp  P             &none
+                &none    &kp  A    &lt NUMPAD_L S &kp  D     &lt FSYM_L  F   &kp  G                              &kp  H       &lt JSYM_L J  &kp  K        &kp  L     &lt EDIT_L SQT     &none
+                &none    &kp  Z    &kp  X         &kp  C     &kp  V          &kp  B    &kp TAB        &none      &kp  N       &kp  M        &kp  COMMA    &kp  DOT   &lt MEDIA_L SLASH  &none
+                                   &none          &kp L_DSK  &none    &lt EDIT_L BSPC  &shcaps2       &kp SPACE  &lt NUMPAD_L ENTER  &kp R_DSK   &none  &none   
                 >;
 
                 sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>, <&scroll3>;
@@ -238,7 +238,7 @@
                 &trans &to QWERTY_L  &trans &trans &trans &trans                                     &kp CARET &kp AMPS &kp ASTRK &kp GRAVE &trans &trans 
                 &trans &trans  &kp TILDE &kp EXCL &trans &trans                                     &kp EQUAL &kp MINUS &kp UNDER &kp BSLH &kp SEMI &kp DQT 
                 &trans  &kp L_DSK  &trans  &trans  &trans  &trans  &kp ESCAPE                &trans &trans &kp PLUS &kp PIPE &kp SLASH &trans &trans 
-                &trans &trans &kp DEL_WRD &trans  &kp ENTER                    &trans &trans &kp ENTER &trans &trans    
+                &trans &trans &kp DEL_WRD &trans  &kp ENTER                    &trans &trans &trans &trans &trans    
                 >;
 
                 sensor-bindings = <&inc_dec_kp L_DSK R_DSK &inc_dec_kp ZOOM_OUT ZOOM_IN>;
